@@ -25,8 +25,8 @@ def get_retriever(endpoint: str, api_key: str, model_name_or_path: str) -> Weavi
 
 # Cache reranker
 @st.cache_resource
-def get_reranker() -> ReRanker:
-    return ReRanker()
+def get_reranker(model_name: str) -> ReRanker:
+    return ReRanker(model_name)
 
 # Cache LLM
 @st.cache_resource
